@@ -351,6 +351,63 @@
       letter-spacing:0.04em; position:relative;
     }
     .sns-list { list-style:none; display:flex; flex-direction:column; gap:12px; }
+    /* ===== SOLVE (悩み解決) ===== */
+    .solve-intro {
+      font-size:clamp(15px,4.4vw,18px); line-height:1.9;
+      color:rgba(255,255,255,0.82); margin-bottom:30px; font-weight:700;
+    }
+    .solve-intro .hl { color:var(--green); }
+    .worry-block { margin-bottom:30px; }
+    .worry-head {
+      display:flex; align-items:center; gap:10px;
+      font-size:clamp(16px,4.6vw,20px); font-weight:900;
+      color:var(--white); margin-bottom:16px;
+    }
+    .worry-head .tag {
+      font-size:12px; font-weight:700; color:var(--navy);
+      background:var(--green); border-radius:100px; padding:4px 12px;
+      letter-spacing:0.04em;
+    }
+    .worry-sub {
+      font-size:13px; font-weight:700; color:var(--green-light);
+      margin:14px 0 8px; letter-spacing:0.04em;
+    }
+    .worry-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
+    .worry-list li {
+      position:relative; padding:10px 14px 10px 38px;
+      background:rgba(255,255,255,0.035);
+      border:1px solid rgba(255,255,255,0.07);
+      border-radius:12px; font-size:14px; line-height:1.55;
+      color:rgba(255,255,255,0.82);
+    }
+    .worry-list li::before {
+      content:"😟"; position:absolute; left:12px; top:10px; font-size:14px;
+    }
+    .solve-card {
+      margin-top:26px;
+      background:linear-gradient(135deg, rgba(57,208,72,0.14), rgba(57,208,72,0.05));
+      border:1px solid rgba(57,208,72,0.32);
+      border-radius:22px; padding:30px 26px;
+    }
+    .solve-card-title {
+      display:flex; align-items:center; gap:10px;
+      font-size:clamp(17px,4.8vw,21px); font-weight:900;
+      color:var(--green); margin-bottom:20px;
+    }
+    .solve-step { display:flex; gap:16px; padding:14px 0; }
+    .solve-step + .solve-step { border-top:1px solid rgba(57,208,72,0.14); }
+    .solve-num {
+      flex-shrink:0; width:38px; height:38px; border-radius:50%;
+      background:var(--green); color:var(--navy);
+      font-family:'Oswald',sans-serif; font-weight:700; font-size:18px;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .solve-step-body h4 {
+      font-size:16px; font-weight:900; color:var(--white); margin-bottom:5px;
+    }
+    .solve-step-body p {
+      font-size:14px; line-height:1.65; color:rgba(255,255,255,0.72);
+    }
     .sns-item a {
       display:flex; align-items:center; gap:16px;
       background:rgba(255,255,255,0.04);
@@ -407,7 +464,7 @@
         <span>Handball Player</span>
         内藤 佑哉
       </h1>
-      <div class="hero-team">アースフレンズBM</div>
+      <div class="hero-team">トップDF専門コーチ</div>
       <p class="hero-tagline">「DFが変わればチームが変わる」</p>
       <div class="scroll-hint">
         <span>scroll</span>
@@ -444,7 +501,7 @@
         <tr><th>血液型</th><td>A型</td></tr>
         <tr><th>出身地</th><td>愛知県</td></tr>
         <tr><th>活動拠点</th><td>愛知県</td></tr>
-        <tr><th>球歴</th><td>東海ハンドボールスクール → 名南中 → 瓊浦高 → 国士舘大 → HONDA</td></tr>
+        <tr><th>球歴</th><td>東海ハンドボールスクール → 名南中 → 瓊浦高 → 国士舘大 → HONDA → アースフレンズBM</td></tr>
       </table>
       <p class="profile-note">
         活動拠点は愛知県ですが、県外からのご依頼も歓迎しています 🙌<br>
@@ -535,11 +592,106 @@
   <div class="divider"></div>
 
   <section>
+    <h2 class="section-title reveal">こんな悩み、ありませんか？</h2>
+    <p class="solve-intro reveal">
+      ディフェンスの悩みは、<span class="hl">指導者にも選手にもつきもの</span>。<br>
+      トップDFとして第一線でプレーしてきた経験から、その「つまずき」を一つずつ解きほぐします。
+    </p>
+
+    <!-- 指導者の悩み -->
+    <div class="worry-block reveal">
+      <div class="worry-head"><span class="tag">指導者</span>指導者の悩み</div>
+      <div class="worry-sub">▼ 戦術・指導方法</div>
+      <ul class="worry-list">
+        <li>どのDF陣形が自チームに合うかわからない</li>
+        <li>選手に言葉で説明しても動きがなかなか伝わらない</li>
+        <li>個人DFと組織DFのバランスの教え方が難しい</li>
+      </ul>
+      <div class="worry-sub">▼ 選手の特性・育成</div>
+      <ul class="worry-list">
+        <li>足が速い選手・体の大きい選手への対応方法が統一できない</li>
+        <li>やる気はあるが、DFを「嫌い」と感じている選手への動機づけ</li>
+      </ul>
+      <div class="worry-sub">▼ 情報・リソース不足</div>
+      <ul class="worry-list">
+        <li>DFの専門的な指導者や教材が少ない</li>
+        <li>プロや上位レベルの最新トレンドを知る機会がない</li>
+      </ul>
+    </div>
+
+    <!-- 選手の悩み -->
+    <div class="worry-block reveal">
+      <div class="worry-head"><span class="tag">選手</span>選手の悩み</div>
+      <div class="worry-sub">▼ 技術面</div>
+      <ul class="worry-list">
+        <li>1対1で抜かれてしまう</li>
+        <li>足がついていかない・間合いが合わない</li>
+        <li>ファウルをとられてしまう</li>
+        <li>ブロックやカットのタイミングがわからない</li>
+      </ul>
+      <div class="worry-sub">▼ 判断・理解面</div>
+      <ul class="worry-list">
+        <li>陣形の中で自分がどこに動けばいいかわからない</li>
+        <li>相手の動きを先読みできない</li>
+        <li>ボールと相手を同時に見る視野がない</li>
+      </ul>
+      <div class="worry-sub">▼ メンタル・意識面</div>
+      <ul class="worry-list">
+        <li>DFよりOFの練習の方が楽しい</li>
+        <li>失点すると自信を失いやすい</li>
+        <li>自分のDFが上手くなっているか実感しにくい</li>
+      </ul>
+    </div>
+
+    <!-- 解決方法 -->
+    <div class="solve-card reveal">
+      <div class="solve-card-title">✅ こうやって解決します</div>
+      <div class="solve-step">
+        <div class="solve-num">1</div>
+        <div class="solve-step-body">
+          <h4>現状を「見える化」する</h4>
+          <p>試合・練習映像やヒアリングから、陣形・1対1・間合いのどこにつまずきがあるかを分析。感覚ではなく具体的な課題に落とし込みます。</p>
+        </div>
+      </div>
+      <div class="solve-step">
+        <div class="solve-num">2</div>
+        <div class="solve-step-body">
+          <h4>「動き」で見せて、言葉で補う</h4>
+          <p>トップDFの実演を交えながら、足の運び・間合い・読みのコツを実際の動作で伝授。言葉だけでは伝わらない部分を体感で理解してもらいます。</p>
+        </div>
+      </div>
+      <div class="solve-step">
+        <div class="solve-num">3</div>
+        <div class="solve-step-body">
+          <h4>選手タイプ別の対応を整理</h4>
+          <p>足が速い・体が大きいなど、相手の特性ごとの守り方を体系化。指導者がチーム全体に統一して教えられる「型」をお渡しします。</p>
+        </div>
+      </div>
+      <div class="solve-step">
+        <div class="solve-num">4</div>
+        <div class="solve-step-body">
+          <h4>DFを「楽しい」に変える</h4>
+          <p>守備で止めた瞬間の手応えや成長を実感できるメニューを通じて、DF嫌い・自信のなさを前向きな意識へ。継続できる動機づけまでサポートします。</p>
+        </div>
+      </div>
+      <div class="solve-step">
+        <div class="solve-num">5</div>
+        <div class="solve-step-body">
+          <h4>最新トレンドを共有</h4>
+          <p>プロ・上位レベルで実際に使われているDFの考え方や練習法を、現場目線でわかりやすくお伝えします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
     <h2 class="section-title reveal">お問い合わせ</h2>
     <div class="contact-box reveal">
       <p class="contact-lead">レッスン・指導のご依頼、ご質問は<br>InstagramのDMからお気軽にどうぞ 📩</p>
 
-      <a class="contact-cta" href="https://www.instagram.com/earthfriends.bm16?igsh=MTh5aXljMXk0ZzRyaQ==" target="_blank">
+      <a class="contact-cta" href="https://www.instagram.com/mniyup" target="_blank">
         InstagramのDMで問い合わせる
         <span class="arrow">→</span>
       </a>
